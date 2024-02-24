@@ -1,1 +1,8 @@
-const vh=window.innerHeight;document.documentElement.style.setProperty("--vh",`${vh}px`),window.addEventListener("resize",(()=>{let e=window.innerHeight;document.documentElement.style.setProperty("--vh",`${e}px`)}));
+// 改进vh
+const vh = window.innerHeight;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('resize', () => {
+    let vh = window.innerHeight;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
