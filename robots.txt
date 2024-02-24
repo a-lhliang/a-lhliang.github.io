@@ -1,0 +1,10 @@
+# robots.txt
+User-agent: *
+Allow: /
+Allow: /p/
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+
+Sitemap: https://lhliang.com/sitemap.xml
+Sitemap: https://lhliang.com/baidusitemap.xml
