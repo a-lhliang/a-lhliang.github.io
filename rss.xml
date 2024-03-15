@@ -63,31 +63,6 @@
   </entry>
   
   <entry>
-    <title>Citrix ADC 和 CVAD 防火墙规则</title>
-    <link href="https://lhliang.com/p/c1bb61b0.html"/>
-    <id>https://lhliang.com/p/c1bb61b0.html</id>
-    <published>2023-07-29T16:00:00.000Z</published>
-    <updated>2023-07-30T04:51:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>防火墙规则根据官方文档和项目实施经验总结得出，不足之处还望指正。</p><h2 id="Citrix-ADC-相关防火墙规则"><a href="#Citrix-ADC-相关防火墙规则" class="headerlink" title="Citrix ADC 相关防火墙规则"></a>Citrix ADC 相关防火墙规则</h2><table><thead><tr><th>源</th><th>目的</th><th>协议和端口</th><th>描述</th></tr></thead><tbody><tr><td>管理计算机</td><td>NSIP&#x2F;SNIP</td><td>TCP 22 80 443 3010 3008</td><td>对 NetScaler 配置 GUI 的 SSH 和 HTTP&#x2F;SSL 访问。TCP 3008&#x2F;3010 是 Java，如果流量已加密，则使用 3008。在 10.5 build 57 及更高版本中不需要 Java</td></tr><tr><td>NSIP&#x2F;SNIP</td><td>DNS服务器</td><td>TCP 53 UDP:53 PING</td><td>PING 用于监测 DNS 状态</td></tr><tr><td>NSIP&#x2F;SNIP</td><td>NTP服务器</td><td>UDP 123</td><td>时间同步</td></tr><tr><td>NSIP</td><td>LDAP服务器（域控制器）</td><td>TCP 389 636（安全LDAP）</td><td>安全 LDAP 允许密码更改过期</td></tr><tr><td>NSIP</td><td>LDAP服务器（域控制器）</td><td>TCP 389 636（安全LDAP）</td><td>监测 LDAP 状态</td></tr><tr><td>NSIP</td><td>RADIUS服务器</td><td>UDP 1812</td><td>RADIUS 用于双因素身份验证</td></tr><tr><td>SNIP</td><td>RADIUS服务器</td><td>UDP 1812</td><td>监测 RADIUS 服务状态</td></tr><tr><td>NSIP</td><td>StoreFront</td><td>TCP 80 443</td><td>监测 StoreFront 服务状态</td></tr><tr><td>StoreFront</td><td>NetScaler Gateway VIP</td><td>TCP 443</td><td>从 StoreFront 服务器到 NetScaler 网关的身份验证回调</td></tr><tr><td>SNIP</td><td>DDC</td><td>TCP 80 443</td><td>Secure Ticket Authorities（STA）</td></tr><tr><td>SNIP</td><td>所有虚拟桌面主机网络</td><td>TCP 1494 2598 UDP 1494 2598 16500-16509</td><td>HDX ICA 会话以及UDP 音频</td></tr><tr><td>所有互联和内部用户</td><td>NetScaler Gateway VIP</td><td>TCP 80 443 UDP 443</td><td>来自浏览器和 Citrix 客户端的连接 用于 UDP 音频的 DTLS</td></tr><tr><td>NSIP</td><td>mfa.cloud.com\trust.citrixworkspacesapi.net</td><td>TCP 443</td><td>本机 OTP 推送（需要 DNS）</td></tr></tbody></table><ul><li>默认情况下，身份验证流量使用 NSIP。</li><li>DNS 服务器使用 ping 进行监测。</li></ul><h2 id="Citrix-CVAD-相关防火墙规则"><a href="#Citrix-CVAD-相关防火墙规则" class="headerlink" title="Citrix CVAD 相关防火墙规则"></a>Citrix CVAD 相关防火墙规则</h2><table><thead><tr><th>源</th><th>目的</th><th>协议和端口</th><th>描述</th></tr></thead><tbody><tr><td>管理计算机</td><td>DDC</td><td>TCP 80 443 3389</td><td>PowerShell RDP 管理 DDC</td></tr><tr><td>DDC</td><td>SQL Server</td><td>TCP 1433 UDP 1433</td><td>连接 SQL 数据库</td></tr><tr><td>DDC</td><td>vCenter</td><td>TCP 443</td><td>连接 vCenter 托管资源</td></tr><tr><td>DDC</td><td>SCVMM（Hyper-V）</td><td>TCP 8100</td><td>连接 SCVMM 托管资源</td></tr><tr><td>DDC</td><td>XenServer</td><td>TCP 80 443</td><td>连接 XenServer 托管资源</td></tr><tr><td>DDC</td><td>Citrix Licensing</td><td>TCP 27000 7279 8023-8083</td><td>连接 Licensing 服务器</td></tr><tr><td>DDC</td><td>所有 VDA</td><td>TCP 80</td><td>Brokering</td></tr><tr><td>所有 VDA</td><td>DDC</td><td>TCP 80</td><td>桌面注册</td></tr><tr><td>所有 VDA</td><td>域控制器</td><td>TCP 3268</td><td>桌面注册</td></tr><tr><td>所有 VDA 和应用服务器</td><td>Remote Desktop Licensing Server</td><td>RPC 和 SMB</td><td>远程桌面许可</td></tr><tr><td>StoreFront</td><td>DDC</td><td>TCP 80 443</td><td>XML Secure Ticket Authority（STA）</td></tr><tr><td>StoreFront</td><td>StoreFront</td><td>TCP 808</td><td>多节点复制</td></tr><tr><td>StoreFront</td><td>域控制器</td><td>TCP 88 135 445 389&#x2F;636 49151-65535</td><td>RPC 组策略 认证</td></tr><tr><td>所有客户端（内网）</td><td>StoreFront（或负载地址）</td><td>TCP 80 443</td><td>内网访问 StoreFront</td></tr><tr><td>所有客户端（内网）</td><td>所有 VDA</td><td>TCP 1494 2598 UDP 1494 2598 16500-16509</td><td>HDX ICA UDP音频</td></tr><tr><td>所有客户端</td><td>Citrix Gateway VIP</td><td>TCP 80 443</td><td>互联网或内网访问 Citrix Gateway</td></tr><tr><td>管理计算机</td><td>Director</td><td>TCP 80 443</td><td>运维 Web 页面</td></tr><tr><td>Director</td><td>DDC</td><td>TCP 80 443</td><td>连接 DDC</td></tr><tr><td>管理计算机</td><td>所有 VDA</td><td>TCP 135 3389</td><td>远程协助</td></tr></tbody></table><ul><li>DDC（Delivery Controllers）</li><li>VDA（Virtual Delivery Agent）</li></ul>]]></content>
-    
-    
-    <summary type="html">文章介绍了 Citrix ADC（应用交付控制器） 和 CVAD（Citrix虚拟应用和桌面） 一般环境下防火墙需要开放的规则。</summary>
-    
-    
-    
-    <category term="经验分享" scheme="https://lhliang.com/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="Firewall Rules" scheme="https://lhliang.com/tags/Firewall-Rules/"/>
-    
-    <category term="Citrix ADC" scheme="https://lhliang.com/tags/Citrix-ADC/"/>
-    
-    <category term="Citrix CVAD" scheme="https://lhliang.com/tags/Citrix-CVAD/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Citrix CVAD 架构和通讯连接</title>
     <link href="https://lhliang.com/p/ccab92c4.html"/>
     <id>https://lhliang.com/p/ccab92c4.html</id>
@@ -107,6 +82,31 @@
     <category term="Citrix CVAD" scheme="https://lhliang.com/tags/Citrix-CVAD/"/>
     
     <category term="Citrix" scheme="https://lhliang.com/tags/Citrix/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Citrix ADC 和 CVAD 防火墙规则</title>
+    <link href="https://lhliang.com/p/c1bb61b0.html"/>
+    <id>https://lhliang.com/p/c1bb61b0.html</id>
+    <published>2023-07-29T16:00:00.000Z</published>
+    <updated>2023-07-30T04:51:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>防火墙规则根据官方文档和项目实施经验总结得出，不足之处还望指正。</p><h2 id="Citrix-ADC-相关防火墙规则"><a href="#Citrix-ADC-相关防火墙规则" class="headerlink" title="Citrix ADC 相关防火墙规则"></a>Citrix ADC 相关防火墙规则</h2><table><thead><tr><th>源</th><th>目的</th><th>协议和端口</th><th>描述</th></tr></thead><tbody><tr><td>管理计算机</td><td>NSIP&#x2F;SNIP</td><td>TCP 22 80 443 3010 3008</td><td>对 NetScaler 配置 GUI 的 SSH 和 HTTP&#x2F;SSL 访问。TCP 3008&#x2F;3010 是 Java，如果流量已加密，则使用 3008。在 10.5 build 57 及更高版本中不需要 Java</td></tr><tr><td>NSIP&#x2F;SNIP</td><td>DNS服务器</td><td>TCP 53 UDP:53 PING</td><td>PING 用于监测 DNS 状态</td></tr><tr><td>NSIP&#x2F;SNIP</td><td>NTP服务器</td><td>UDP 123</td><td>时间同步</td></tr><tr><td>NSIP</td><td>LDAP服务器（域控制器）</td><td>TCP 389 636（安全LDAP）</td><td>安全 LDAP 允许密码更改过期</td></tr><tr><td>NSIP</td><td>LDAP服务器（域控制器）</td><td>TCP 389 636（安全LDAP）</td><td>监测 LDAP 状态</td></tr><tr><td>NSIP</td><td>RADIUS服务器</td><td>UDP 1812</td><td>RADIUS 用于双因素身份验证</td></tr><tr><td>SNIP</td><td>RADIUS服务器</td><td>UDP 1812</td><td>监测 RADIUS 服务状态</td></tr><tr><td>NSIP</td><td>StoreFront</td><td>TCP 80 443</td><td>监测 StoreFront 服务状态</td></tr><tr><td>StoreFront</td><td>NetScaler Gateway VIP</td><td>TCP 443</td><td>从 StoreFront 服务器到 NetScaler 网关的身份验证回调</td></tr><tr><td>SNIP</td><td>DDC</td><td>TCP 80 443</td><td>Secure Ticket Authorities（STA）</td></tr><tr><td>SNIP</td><td>所有虚拟桌面主机网络</td><td>TCP 1494 2598 UDP 1494 2598 16500-16509</td><td>HDX ICA 会话以及UDP 音频</td></tr><tr><td>所有互联和内部用户</td><td>NetScaler Gateway VIP</td><td>TCP 80 443 UDP 443</td><td>来自浏览器和 Citrix 客户端的连接 用于 UDP 音频的 DTLS</td></tr><tr><td>NSIP</td><td>mfa.cloud.com\trust.citrixworkspacesapi.net</td><td>TCP 443</td><td>本机 OTP 推送（需要 DNS）</td></tr></tbody></table><ul><li>默认情况下，身份验证流量使用 NSIP。</li><li>DNS 服务器使用 ping 进行监测。</li></ul><h2 id="Citrix-CVAD-相关防火墙规则"><a href="#Citrix-CVAD-相关防火墙规则" class="headerlink" title="Citrix CVAD 相关防火墙规则"></a>Citrix CVAD 相关防火墙规则</h2><table><thead><tr><th>源</th><th>目的</th><th>协议和端口</th><th>描述</th></tr></thead><tbody><tr><td>管理计算机</td><td>DDC</td><td>TCP 80 443 3389</td><td>PowerShell RDP 管理 DDC</td></tr><tr><td>DDC</td><td>SQL Server</td><td>TCP 1433 UDP 1433</td><td>连接 SQL 数据库</td></tr><tr><td>DDC</td><td>vCenter</td><td>TCP 443</td><td>连接 vCenter 托管资源</td></tr><tr><td>DDC</td><td>SCVMM（Hyper-V）</td><td>TCP 8100</td><td>连接 SCVMM 托管资源</td></tr><tr><td>DDC</td><td>XenServer</td><td>TCP 80 443</td><td>连接 XenServer 托管资源</td></tr><tr><td>DDC</td><td>Citrix Licensing</td><td>TCP 27000 7279 8023-8083</td><td>连接 Licensing 服务器</td></tr><tr><td>DDC</td><td>所有 VDA</td><td>TCP 80</td><td>Brokering</td></tr><tr><td>所有 VDA</td><td>DDC</td><td>TCP 80</td><td>桌面注册</td></tr><tr><td>所有 VDA</td><td>域控制器</td><td>TCP 3268</td><td>桌面注册</td></tr><tr><td>所有 VDA 和应用服务器</td><td>Remote Desktop Licensing Server</td><td>RPC 和 SMB</td><td>远程桌面许可</td></tr><tr><td>StoreFront</td><td>DDC</td><td>TCP 80 443</td><td>XML Secure Ticket Authority（STA）</td></tr><tr><td>StoreFront</td><td>StoreFront</td><td>TCP 808</td><td>多节点复制</td></tr><tr><td>StoreFront</td><td>域控制器</td><td>TCP 88 135 445 389&#x2F;636 49151-65535</td><td>RPC 组策略 认证</td></tr><tr><td>所有客户端（内网）</td><td>StoreFront（或负载地址）</td><td>TCP 80 443</td><td>内网访问 StoreFront</td></tr><tr><td>所有客户端（内网）</td><td>所有 VDA</td><td>TCP 1494 2598 UDP 1494 2598 16500-16509</td><td>HDX ICA UDP音频</td></tr><tr><td>所有客户端</td><td>Citrix Gateway VIP</td><td>TCP 80 443</td><td>互联网或内网访问 Citrix Gateway</td></tr><tr><td>管理计算机</td><td>Director</td><td>TCP 80 443</td><td>运维 Web 页面</td></tr><tr><td>Director</td><td>DDC</td><td>TCP 80 443</td><td>连接 DDC</td></tr><tr><td>管理计算机</td><td>所有 VDA</td><td>TCP 135 3389</td><td>远程协助</td></tr></tbody></table><ul><li>DDC（Delivery Controllers）</li><li>VDA（Virtual Delivery Agent）</li></ul>]]></content>
+    
+    
+    <summary type="html">文章介绍了 Citrix ADC（应用交付控制器） 和 CVAD（Citrix虚拟应用和桌面） 一般环境下防火墙需要开放的规则。</summary>
+    
+    
+    
+    <category term="经验分享" scheme="https://lhliang.com/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="Citrix CVAD" scheme="https://lhliang.com/tags/Citrix-CVAD/"/>
+    
+    <category term="Firewall Rules" scheme="https://lhliang.com/tags/Firewall-Rules/"/>
+    
+    <category term="Citrix ADC" scheme="https://lhliang.com/tags/Citrix-ADC/"/>
     
   </entry>
   
