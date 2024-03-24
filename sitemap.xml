@@ -367,7 +367,21 @@
   </url>
   
   <url>
-    <loc>https://lhliang.com/tags/%E7%BD%91%E5%8D%A1%E7%BB%91%E5%AE%9A/</loc>
+    <loc>https://lhliang.com/tags/VMware/</loc>
+    <lastmod>2024-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lhliang.com/tags/Tanzu/</loc>
+    <lastmod>2024-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lhliang.com/tags/TKGS/</loc>
     <lastmod>2024-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -409,21 +423,7 @@
   </url>
   
   <url>
-    <loc>https://lhliang.com/tags/VMware/</loc>
-    <lastmod>2024-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lhliang.com/tags/Tanzu/</loc>
-    <lastmod>2024-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lhliang.com/tags/TKGS/</loc>
+    <loc>https://lhliang.com/tags/%E7%BD%91%E5%8D%A1%E7%BB%91%E5%AE%9A/</loc>
     <lastmod>2024-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -472,6 +472,13 @@
   </url>
   
   <url>
+    <loc>https://lhliang.com/tags/%E7%BD%91%E7%AB%99%E7%8A%B6%E6%80%81/</loc>
+    <lastmod>2024-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://lhliang.com/tags/sky/</loc>
     <lastmod>2024-03-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -486,13 +493,6 @@
   </url>
   
   <url>
-    <loc>https://lhliang.com/tags/%E7%BD%91%E7%AB%99%E7%8A%B6%E6%80%81/</loc>
-    <lastmod>2024-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://lhliang.com/tags/XenServer/</loc>
     <lastmod>2024-03-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -501,20 +501,6 @@
   
   <url>
     <loc>https://lhliang.com/tags/%E8%99%9A%E6%8B%9F%E5%BA%94%E7%94%A8%E5%92%8C%E6%A1%8C%E9%9D%A2/</loc>
-    <lastmod>2024-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lhliang.com/tags/ESXi/</loc>
-    <lastmod>2024-03-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lhliang.com/tags/vSphere/</loc>
     <lastmod>2024-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -548,6 +534,20 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://lhliang.com/tags/ESXi/</loc>
+    <lastmod>2024-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lhliang.com/tags/vSphere/</loc>
+    <lastmod>2024-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -558,7 +558,7 @@
   </url>
   
   <url>
-    <loc>https://lhliang.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://lhliang.com/categories/%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2024-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -579,7 +579,7 @@
   </url>
   
   <url>
-    <loc>https://lhliang.com/categories/%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF/</loc>
+    <loc>https://lhliang.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
