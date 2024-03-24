@@ -1,0 +1,1 @@
+const oa_name="刘洪亮Leo",oa_description="分享设计与科技生活",web_beian="京ICP备14043108号-2";function replaceText(e,n){var t=document.getElementById(e);t?t.innerText=n:console.log("Element with ID '"+e+"' not found.")}replaceText("wechatOA-name",oa_name),replaceText("wechatOA-description","分享设计与科技生活"),replaceText("web-beian",web_beian);
