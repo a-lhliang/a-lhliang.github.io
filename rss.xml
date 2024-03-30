@@ -203,29 +203,6 @@
   </entry>
   
   <entry>
-    <title>Linux 常见的文件系统以及优缺点对比</title>
-    <link href="https://lhliang.com/p/98f4319d.html"/>
-    <id>https://lhliang.com/p/98f4319d.html</id>
-    <published>2023-05-23T16:00:00.000Z</published>
-    <updated>2023-07-30T03:35:37.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Linux 支持多种文件系统，以下是一些常见的 Linux 文件系统及其优缺点和区别：</p><h2 id="ext4（第四扩展文件系统）"><a href="#ext4（第四扩展文件系统）" class="headerlink" title="ext4（第四扩展文件系统）"></a>ext4（第四扩展文件系统）</h2><ul><li>优点：广泛使用的文件系统，稳定性高；支持大容量存储和大文件；快速索引和检索；支持日志功能，能够快速恢复文件系统状态；</li><li>缺点：不支持文件和文件名的 Unicode 标准；不适用于移动设备。</li></ul><h2 id="XFS（XFS-文件系统）"><a href="#XFS（XFS-文件系统）" class="headerlink" title="XFS（XFS 文件系统）"></a>XFS（XFS 文件系统）</h2><ul><li>优点：高性能文件系统，适用于大容量存储；支持快速索引和检索；可扩展性强；支持快照和日志功能；</li><li>缺点：不支持文件和文件名的 Unicode 标准；不适用于小容量存储设备。</li></ul><h2 id="btrfs（Btrfs-文件系统）"><a href="#btrfs（Btrfs-文件系统）" class="headerlink" title="btrfs（Btrfs 文件系统）"></a>btrfs（Btrfs 文件系统）</h2><ul><li>优点：先进的文件系统，支持快照、数据压缩和校验等功能；可扩展性强；支持在线文件系统扩容和修复；</li><li>缺点：仍处于实验性阶段，可能不如 ext4 或 XFS 稳定；某些功能可能不完全支持或存在问题。</li></ul><h2 id="F2FS（闪存友好文件系统）"><a href="#F2FS（闪存友好文件系统）" class="headerlink" title="F2FS（闪存友好文件系统）"></a>F2FS（闪存友好文件系统）</h2><ul><li>优点：专为闪存存储设备设计，支持快速读写；减少写入操作对闪存的磨损；支持 TRIM 和压缩等优化功能；</li><li>缺点：不适用于传统磁盘驱动器；不支持大容量存储；兼容性较差。</li></ul><h2 id="ZFS（Zettabyte-文件系统）"><a href="#ZFS（Zettabyte-文件系统）" class="headerlink" title="ZFS（Zettabyte 文件系统）"></a>ZFS（Zettabyte 文件系统）</h2><ul><li>优点：先进的文件系统，支持快照、数据校验和软件 RAID 等功能；可靠性高；支持在线存储池扩容和修复；</li><li>缺点：需要额外的内存和处理能力；在某些 Linux 发行版中的集成和支持可能有限。</li></ul><p>这些文件系统具有不同的特点和用途，选择文件系统取决于你的需求和预期的使用环境。对于大多数常规情况，ext4 是最常见和可靠的选择。如果需要处理大容量存储和高性能需求，XFS 或 btrfs 可能是更好的选择。F2FS 适用于闪存设备，而 ZFS 则适用于对数据完整性和可靠性要求较高的场景。</p>]]></content>
-    
-    
-    <summary type="html">这篇文章讲述了Linux中常用的文件系统，以及各文件系统的优缺点对比，对于大多数常规情况，ext4 是最常见和可靠的选择，ZFS则适用于对数据完整性和可靠性要求较高的场景。</summary>
-    
-    
-    
-    <category term="科普文章" scheme="https://lhliang.com/categories/%E7%A7%91%E6%99%AE%E6%96%87%E7%AB%A0/"/>
-    
-    
-    <category term="Linux" scheme="https://lhliang.com/tags/Linux/"/>
-    
-    <category term="文件系统" scheme="https://lhliang.com/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>MacOS 支持的文件系统以及优缺点对比</title>
     <link href="https://lhliang.com/p/3505e186.html"/>
     <id>https://lhliang.com/p/3505e186.html</id>
@@ -242,9 +219,32 @@
     <category term="科普文章" scheme="https://lhliang.com/categories/%E7%A7%91%E6%99%AE%E6%96%87%E7%AB%A0/"/>
     
     
+    <category term="MacOS" scheme="https://lhliang.com/tags/MacOS/"/>
+    
     <category term="文件系统" scheme="https://lhliang.com/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="MacOS" scheme="https://lhliang.com/tags/MacOS/"/>
+  </entry>
+  
+  <entry>
+    <title>Linux 常见的文件系统以及优缺点对比</title>
+    <link href="https://lhliang.com/p/98f4319d.html"/>
+    <id>https://lhliang.com/p/98f4319d.html</id>
+    <published>2023-05-23T16:00:00.000Z</published>
+    <updated>2023-07-30T03:35:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Linux 支持多种文件系统，以下是一些常见的 Linux 文件系统及其优缺点和区别：</p><h2 id="ext4（第四扩展文件系统）"><a href="#ext4（第四扩展文件系统）" class="headerlink" title="ext4（第四扩展文件系统）"></a>ext4（第四扩展文件系统）</h2><ul><li>优点：广泛使用的文件系统，稳定性高；支持大容量存储和大文件；快速索引和检索；支持日志功能，能够快速恢复文件系统状态；</li><li>缺点：不支持文件和文件名的 Unicode 标准；不适用于移动设备。</li></ul><h2 id="XFS（XFS-文件系统）"><a href="#XFS（XFS-文件系统）" class="headerlink" title="XFS（XFS 文件系统）"></a>XFS（XFS 文件系统）</h2><ul><li>优点：高性能文件系统，适用于大容量存储；支持快速索引和检索；可扩展性强；支持快照和日志功能；</li><li>缺点：不支持文件和文件名的 Unicode 标准；不适用于小容量存储设备。</li></ul><h2 id="btrfs（Btrfs-文件系统）"><a href="#btrfs（Btrfs-文件系统）" class="headerlink" title="btrfs（Btrfs 文件系统）"></a>btrfs（Btrfs 文件系统）</h2><ul><li>优点：先进的文件系统，支持快照、数据压缩和校验等功能；可扩展性强；支持在线文件系统扩容和修复；</li><li>缺点：仍处于实验性阶段，可能不如 ext4 或 XFS 稳定；某些功能可能不完全支持或存在问题。</li></ul><h2 id="F2FS（闪存友好文件系统）"><a href="#F2FS（闪存友好文件系统）" class="headerlink" title="F2FS（闪存友好文件系统）"></a>F2FS（闪存友好文件系统）</h2><ul><li>优点：专为闪存存储设备设计，支持快速读写；减少写入操作对闪存的磨损；支持 TRIM 和压缩等优化功能；</li><li>缺点：不适用于传统磁盘驱动器；不支持大容量存储；兼容性较差。</li></ul><h2 id="ZFS（Zettabyte-文件系统）"><a href="#ZFS（Zettabyte-文件系统）" class="headerlink" title="ZFS（Zettabyte 文件系统）"></a>ZFS（Zettabyte 文件系统）</h2><ul><li>优点：先进的文件系统，支持快照、数据校验和软件 RAID 等功能；可靠性高；支持在线存储池扩容和修复；</li><li>缺点：需要额外的内存和处理能力；在某些 Linux 发行版中的集成和支持可能有限。</li></ul><p>这些文件系统具有不同的特点和用途，选择文件系统取决于你的需求和预期的使用环境。对于大多数常规情况，ext4 是最常见和可靠的选择。如果需要处理大容量存储和高性能需求，XFS 或 btrfs 可能是更好的选择。F2FS 适用于闪存设备，而 ZFS 则适用于对数据完整性和可靠性要求较高的场景。</p>]]></content>
+    
+    
+    <summary type="html">这篇文章讲述了Linux中常用的文件系统，以及各文件系统的优缺点对比，对于大多数常规情况，ext4 是最常见和可靠的选择，ZFS则适用于对数据完整性和可靠性要求较高的场景。</summary>
+    
+    
+    
+    <category term="科普文章" scheme="https://lhliang.com/categories/%E7%A7%91%E6%99%AE%E6%96%87%E7%AB%A0/"/>
+    
+    
+    <category term="文件系统" scheme="https://lhliang.com/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="Linux" scheme="https://lhliang.com/tags/Linux/"/>
     
   </entry>
   
@@ -334,9 +334,9 @@
     <category term="主题教程" scheme="https://lhliang.com/categories/%E4%B8%BB%E9%A2%98%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="前端开发" scheme="https://lhliang.com/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
     <category term="Hexo" scheme="https://lhliang.com/tags/Hexo/"/>
+    
+    <category term="前端开发" scheme="https://lhliang.com/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     <category term="Butterfly" scheme="https://lhliang.com/tags/Butterfly/"/>
     
@@ -405,9 +405,9 @@
     <category term="转载分享" scheme="https://lhliang.com/categories/%E8%BD%AC%E8%BD%BD%E5%88%86%E4%BA%AB/"/>
     
     
-    <category term="前端开发" scheme="https://lhliang.com/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
     <category term="Hexo" scheme="https://lhliang.com/tags/Hexo/"/>
+    
+    <category term="前端开发" scheme="https://lhliang.com/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
     <category term="Butterfly" scheme="https://lhliang.com/tags/Butterfly/"/>
     
