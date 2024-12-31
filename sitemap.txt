@@ -36,7 +36,6 @@ https://lhliang.com/categories/
 https://lhliang.com/
 https://lhliang.com/tags/Linux/
 https://lhliang.com/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/
-https://lhliang.com/tags/MacOS/
 https://lhliang.com/tags/PowerShell/
 https://lhliang.com/tags/%E6%9D%80%E6%AF%92%E8%BD%AF%E4%BB%B6/
 https://lhliang.com/tags/%E7%BD%91%E5%8D%A1%E7%BB%91%E5%AE%9A/
@@ -44,6 +43,7 @@ https://lhliang.com/tags/VMware/
 https://lhliang.com/tags/Tanzu/
 https://lhliang.com/tags/TKGS/
 https://lhliang.com/tags/Windows/
+https://lhliang.com/tags/MacOS/
 https://lhliang.com/tags/Sysinternals/
 https://lhliang.com/tags/%E4%B8%BB%E9%A2%98%E6%A0%87%E7%AD%BE/
 https://lhliang.com/tags/Hexo/
